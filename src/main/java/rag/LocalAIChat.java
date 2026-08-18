@@ -14,8 +14,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class LocalAIChat {
-    private static final String OLLAMA_GENERATE_URL = "http://localhost:11434/api/generate";
-    private static final String OLLAMA_EMBED_URL = "http://localhost:11434/api/embeddings";
+    private static final String OLLAMA_HOST = System.getenv().getOrDefault("OLLAMA_HOST", "http://localhost:11434");
+    private static final String OLLAMA_GENERATE_URL = OLLAMA_HOST + "/api/generate";
+    private static final String OLLAMA_EMBED_URL = OLLAMA_HOST + "/api/embeddings";
     private static final String CHAT_MODEL = "llama3.2";
     private static final String BACKEND_MODEL = "llama3.2";
     private static final String EMBED_MODEL = "nomic-embed-text";
