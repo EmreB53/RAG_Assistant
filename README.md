@@ -20,6 +20,18 @@ it ensures context awareness in its responses.
 ### How to Run?
 1. Install [Docker](https://www.docker.com/) and [Ollama](https://ollama.com/)
 2. Pull the required models:
-```bash
+```shell
 ollama pull llama3.2
 ollama pull nomic-embed-text
+```
+3. Run Ollama
+```shell
+ollama serve
+```
+4. Run docker-compose in the top directory
+```shell
+docker-compose up -d
+```
+5. Open your IDE of choice and run the ```main``` method in ```LocalAIChat.java```
+
+Keep in mind that ```docker-compose down -v``` resets the memory state in the database.
