@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  memory-db:
+    image: pgvector/pgvector:pg15
+    container_name: rag_postgres_db
+    environment:
+      POSTGRES_USER: rag_user
+      POSTGRES_PASSWORD: rag_password
+      POSTGRES_DB: memory_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+volumes:
+  pgdata:
