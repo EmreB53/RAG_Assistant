@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseManager {
-    private static final String URL = "jdbc:postgresql://localhost:5432/memory_db";
-    private static final String USER = "rag_user";
-    private static final String PASSWORD = "rag_password";
+    private static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:postgresql://localhost:5432/memory_db");
+    private static final String USER = System.getenv().getOrDefault("DB_USER", "rag_user");
+    private static final String PASSWORD = System.getenv().getOrDefault("DB_PASSWORD", "rag_password");
 
     public void saveMemory(String summary, List<Double> embedding) {
         String sql = "INSERT INTO memories (summary_text, embedding) VALUES (?, ?::vector);";
