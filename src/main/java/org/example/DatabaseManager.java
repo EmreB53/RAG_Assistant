@@ -20,7 +20,7 @@ public class DatabaseManager {
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
-            System.err.println("Datenbankfehler beim Speichern: " + e.getMessage());
+            System.err.println("Database error on write: " + e.getMessage());
         }
     }
     public List<String> getRelevantSummaries(List<Double> embedding) {
@@ -39,7 +39,7 @@ public class DatabaseManager {
             }
 
         } catch (SQLException e) {
-            System.err.println("Datenbankfehler beim Lesen: " + e.getMessage());
+            System.err.println("Database error on read: " + e.getMessage());
         }
         return results;
     }
