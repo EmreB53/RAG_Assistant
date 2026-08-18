@@ -1,4 +1,4 @@
-package org.example;
+package rag;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
